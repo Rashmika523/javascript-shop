@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container{
+    width: 500px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -1px 0 5px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+@media (max-width: 536px){
+    .container{
+        width: 400px;
+    }
+}
+@media (max-width: 430px){
+    .container{
+        width: 300px;
+    }
+}
+
+.container i{
+    padding-top: 20px;
+    font-size: 3.5rem;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: green;
+}
+
+@media (max-width: 430px){
+    .container i{
+        font-size: 2.5rem;
+    }
+}
+
+.container h2{
+    color: green;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+@media (max-width: 430px){
+    .container h2{
+        font-size: 1.5rem;
+    }
+}
+.container p{
+    margin-top: 5px;
+    color: red;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+@media (max-width: 430px){
+    .container p{
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+    }
+}
+.container a{
+    display: block;
+    width: 100%;
+}
+.container a button{
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #496989;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: bold;
+}
+.container a button:hover{
+    background-color: #41C9E2;
+}
+

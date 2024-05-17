@@ -1,0 +1,582 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+/*order summary page */
+
+.container {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+    margin-top: 20px;
+}
+
+
+.left {
+    width: 70%;
+    margin-right: 60px;
+    box-shadow: -1px 0 5px 5px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+}
+
+.right {
+
+    box-shadow: -1px 0 5px 5px rgba(0, 0, 0, 0.5);
+    width: 30%;
+
+}
+@media (max-width: 669px){
+    .container{
+        width: 100%;
+    }
+    .left{
+        width: 60%;
+    }
+}
+@media (max-width: 1075px){
+    .container{
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        justify-content: center;
+    }
+    .right{
+        margin-top: 20px;
+        width: 50%;
+    }
+}
+
+.order-summary-title {
+    background-color: #496989;
+    color: white;
+    width: 100%;
+    padding: 5px;
+    padding-left: 0px;
+    box-shadow: -1px 0 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.payment-header, .billing-header, .contact-header {
+    background-color: #496989;
+    color: white;
+    width: 100%;
+    padding: 5px;
+    padding-left: 0px;
+    box-shadow: -1px 0 2px 2px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+@media (max-width: 1075px){
+    .payment-header, .billing-header, .contact-header,.order-summary-title{
+        padding-left: 10px;
+
+    }
+}
+.payment-header:hover, .billing-header:hover, .contact-header:hover {
+    background-color: #41C9E2;
+}
+
+.order-summary-title h2, .payment-header h2, .billing-header h2, .contact-header h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.col-icon {
+    margin-right: 20px;
+}
+
+.order-summary {
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 10px;
+    box-shadow: -1px 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.reference, .order-title, .order-total {
+    background-color: #41C9E2;
+    color: white;
+    width: 100%;
+    padding: 5px 0px;
+    margin-bottom: 5px;
+}
+
+.reference, .order-title h3 {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+@media (max-width: 1075px){
+    .reference,.order-title{
+        padding-left: 10px;
+    }
+}
+.order-total h2 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.order-items {
+    padding: 15px;
+
+}
+
+.order-item {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    padding: 10px 5px;
+}
+
+.order-item span {
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.order-action {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+}
+@media (max-width: 675px){
+    .order-action{
+        flex-direction: column;
+    }
+    .order-action button{
+        margin-top: 10px;
+        width: 80%;
+    }
+}
+
+.order-action button {
+    padding: 10px 10px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background-color: #496989;
+    color: white;
+
+}
+@media (max-width: 1075px){
+    .order-action button{
+        padding: 10px 15px;
+    }
+}
+
+/*common css for all forms*/
+.form {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -1px 0 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+}
+
+.form label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.form input, .form select {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    box-shadow: -1px 0 2px 2px rgba(0, 0, 0, 0.3);
+    font-size: 0.9rem;
+}
+
+
+.form label span {
+    color: red;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.form .form-button {
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    color: white;
+    background-color: #496989;
+    font-weight: bold;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.form-button:hover {
+    color: white;
+    background-color: #41C9E2;
+}
+
+
+input:focus {
+    outline: none;
+}
+
+/*payment Details*/
+
+.payment-details {
+    width: 60%;
+    padding-bottom: 10px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    height: 370px;
+    transition: height 0.5s ease-in;
+}
+@media (max-width: 669px){
+    .payment-details{
+        width: 50%;
+    }
+}
+@media (max-width: 610px){
+    .payment-details{
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 1075px){
+    .payment-details{
+        width: 70%;
+        height: 400px;
+        padding: 0;
+        margin-top: 20px;
+    }
+}
+@media (max-width: 841px){
+    .payment-details{
+        width: 100%;
+    }
+    .payment-details .form{
+        padding-right: 20px;
+    }
+}
+
+
+.payment-toggle {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    transition: height 0.3s ease-in;
+}
+
+.payment-toggle .form {
+    height: 0;
+    box-shadow: none;
+    transition: height 0.3s ease-in;
+    display: none;
+}
+
+.payment-toggle .form label, .payment-toggle .form input, .payment-toggle button, .payment-toggle .payment-action {
+    display: none;
+    /*transition: diplay 1s ease-in;*/
+}
+
+.payment-title h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.payment-details .form {
+    height: 330px;
+    transition: height 0.5s ease-in;
+}
+
+.payment-security {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    justify-content: space-between;
+}
+@media (max-width: 1075px){
+    .payment-security {
+        flex-direction: column;
+    }
+}
+
+.payment-security .date, .cvv {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-security .cvv input {
+    width: 40%;
+}
+@media (max-width: 1075px){
+    .payment-security input {
+        width: 40%;
+    }
+    .payment-action{
+        margin-top: 10px;
+    }
+    .payment-action button {
+        flex: 0 1 100%; /* Set the button to take 100% of the container width */
+    }
+}
+@media (max-width: 610px){
+    .payment-security input {
+        width: 60%;
+    }
+}
+@media (max-width: 895px){
+    .payment-action{
+        display: flex;
+        margin-top: 15px;
+        padding: 0;
+    }
+    .payment-details .form .form-button{
+        padding: 10px 5px;
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 528px){
+    .payment-details .form .form-button{
+        padding: 5px;
+        font-size: 0.8rem;
+    }
+}
+
+
+/*Billing details*/
+@media (max-width: 669px){
+    .billing-details{
+        width: 100%;
+        margin-right: 20px;
+    }
+}
+.location {
+    display: flex;
+    justify-content: space-between;
+}
+
+.country, .city, .zip-code {
+    display: flex;
+    flex-direction: column;
+}
+
+.location select {
+    outline: none;
+}
+
+.billing-action,.contact-action {
+    margin-top: 30px;
+}
+
+@media (max-width: 656px){
+    .billing-action,.contact-action{
+        flex-direction: row;
+    }
+}
+@media (max-width: 486px){
+    .billing-action,.contact-action{
+       display: flex;
+        border: 1px solid red;
+        justify-content: center;
+        align-items: center;
+        padding-top: 5px;
+    }
+}
+@media (max-width: 486px){
+    .billing-action .form button,.contact-action .form button{
+        display: flex;
+        width: 50%;
+        padding: 5px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 670px){
+    .billing-action .form button,.contact-action .form button{
+        display: flex;
+        width: 60%;
+        padding: 0;
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 669px) {
+    .billing-details .form button,.contact-details .form button{
+
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    .billing-details,.contact-details{
+        display: flex;
+    }
+}
+@media (max-width: 656px) {
+    .billing-details .form button,.contact-details .form button{
+
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    .billing-details,.contact-details{
+        display: flex;
+    }
+}
+@media (max-width: 610px) {
+    .billing-details .form button,.contact-details .form button{
+
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    .billing-details,.contact-details{
+        display: flex;
+    }
+}
+@media (max-width: 593px) {
+    .billing-details .form button,.contact-details .form button{
+
+        padding: 5px;
+        font-size: 0.9rem;
+    }
+    .billing-details,.contact-details{
+        display: flex;
+    }
+}
+@media (max-width: 528px){
+    .billing-details .form button,.contact-details .form button{
+
+        padding: 3px;
+        font-size: 0.9rem;
+    }
+    .billing-details,.contact-details{
+        display: flex;
+    }
+}
+.billing-details {
+    padding-bottom: 10px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    height: 400px;
+    transition: height 0.5s ease-in;
+}
+@media (max-width: 656px){
+    .billing-details{
+        height: 400px;
+    }
+    .billing-details .form{
+        height: 550px;
+    }
+}
+@media (max-width: 1075px){
+    .location{
+        flex-direction: column;
+    }
+    .billing-details{
+        height: 520px;
+        margin-bottom: 60px;
+
+    }
+    .billing-details .form .location .country select{
+        width: 50%;
+    }
+    .billing-details .form .location .city input,.billing-details .form .location .zip-code input{
+        width: 50%;
+    }
+    .billing-action{
+        padding-bottom: 10px;
+    }
+}
+@media (max-width: 670px){
+    .billing-details{
+        height: 560px;
+    }
+}
+
+.billing-toggle {
+    height: 0;
+    transition: height 0.5s ease-in;
+    margin: 0;
+    padding: 0;
+}
+
+.billing-toggle .form {
+    height: 0;
+    box-shadow: none;
+    transition: height 0.3s ease-in;
+    display: none;
+}
+
+.billing-toggle .form label, .billing-toggle .form input, .billing-toggle button, .billing-toggle .billing-action {
+    display: none;
+}
+
+/*Contact Details*/
+.contact-details{
+    padding-bottom: 10px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    height: 400px;
+    transition: height 0.5s ease-in;
+}
+@media (max-width: 656px){
+    .contact-details{
+        height: 450px;
+    }
+}
+.contact-toggle{
+    height: 0;
+    transition: height 0.5s ease-in;
+    margin: 0;
+    padding: 0;
+}
+.contact-toggle .form {
+    height: 0;
+    box-shadow: none;
+    transition: height 0.3s ease-in;
+    display: none;
+}
+.contact-toggle.form label, .contact-toggle .form input, .contact-toggle button, .contact-toggle .contact-action {
+    display: none;
+}
+
+/*css for validation*/
+.form .disable-btn{
+    background-color:#F0F0F0;
+}
+.form .disable-btn:hover{
+    cursor: none;
+}
+.error {
+    box-shadow: -1px 0 2px 2px rgba(255, 0, 0, 1)!important;
+}
+.valid-btn{
+    cursor: pointer;
+    background-color: #496989 !important;
+    color: white!important;
+}
+.valid-btn:hover{
+    cursor: pointer!important;
+}
+.error-header{
+    background-color: red !important;
+}
+.back-to-home{
+    background-color: rgba(0,0,0,0.6)!important;
+}
+
